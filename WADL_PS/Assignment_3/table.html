@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <title>Create dynamic table in JavaScript</title>
+    <style>
+       
+      .input{
+          border:none;
+          font-size:10px;
+      }
+      .input:focus{
+          outline:none;
+      }
+    </style>
+ 
+</head>
+<body>
+
+<table>
+</table>
+    <input type="text" id="rows" placeholder="enter no of rows"> 
+    <input type="text" id="columns" placeholder="enter no of columns"> 
+    <button id="fetch" type="submit">Submit</button>
+    <div id="container"></div>
+    <script type="text/javascript">
+
+        document.getElementById('fetch').onclick = function(){
+            let rows = document.getElementById('rows').value
+            let columns = document.getElementById('columns').value
+            var temp=1;
+            var output = '<table border="1px">'
+            for(var i=1;i<=rows;i++)
+            {
+                output = output + '<tr>'
+                for(var j=1;j<=rows;j++)
+                {
+                    let count = parseInt(temp*i)+parseInt(j)-1;
+                    output = output + '<td>'+count+'</td>'
+                }
+                output = output + '</tr>'
+            }
+            output = output + '</table>'
+            console.log(output)
+            document.getElementById('container').innerHTML = output
+        }
+
+        
+        </script>
+</body>
+</html>
+
+
