@@ -16,6 +16,4 @@ class MainPage(webapp2.RequestHandler):
                 for i in range(nterms):
                      self.response.write(recur_fibo(i))
         
-app = webapp2.WSGIApplication([('/',MainPage),
-			       ],
-                               debug=True)
+app = webapp2.WSGIApplication([('/',MainPage),],debug=True)
